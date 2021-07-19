@@ -1,0 +1,2 @@
+# Gmail2Discord
+新着GmailをDiscordに投げるGASのスクリプト
