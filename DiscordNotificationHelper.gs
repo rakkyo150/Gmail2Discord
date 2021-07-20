@@ -1,4 +1,4 @@
-function NotifyDiscord(webhook_url,message) {
+function DiscordNotificationHelper(webhook_url,message) {
   const from = message.getFrom();
   const subject_bold="**"+message.getSubject()+"**";
   const subject = message.getSubject();
