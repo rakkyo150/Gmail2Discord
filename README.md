@@ -8,7 +8,7 @@
 受け取りたいGmailのGoogle アカウントにログインしたうえで、Google スプレッドシートを開いてください。<br>
 スプレッドシートを新規作成して、上のツールからスクリプトエディターを開きます。<br>
 GitHubアカウントを持っている方は、[Google Apps Script GitHub アシスタント](https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo?hl=ja)を導入してこのリポジトリをフォークしてプルするのが一番楽かも。<br>
-そうじゃない人は.gsファイルのコピペで頑張ってください。
+そうじゃない人は.gsファイルを頑張ってコピペしてください。
 
 スクリプトを移し終わったら、一旦スプレッドシートに戻ります.<br>
 スプレッドシートのA列はコードとは関係ないので、適当に好きなインデックス名を記入してください。<br>
