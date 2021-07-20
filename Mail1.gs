@@ -15,7 +15,7 @@ function Mail1(){
      message.markRead();
      const webhook_url = getWebhookUrl1();
 
-     NotifyDiscord(webhook_url,message);
+     return DiscordNotificationHelper(webhook_url,message);
    })
 
    Logger.log(payloads);
@@ -24,7 +24,7 @@ function Mail1(){
 }
 
 
-function getWebhookURL1() {
+function getWebhookUrl1() {
  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
  const sheet = spreadsheet.getActiveSheet();
 

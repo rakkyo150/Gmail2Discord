@@ -2,6 +2,8 @@ function OtherMail() {
  const query="label:unread"
  const threads = GmailApp.search(query);  // 未読のスレッドすべてを取得
 
+ Logger.log(threads)
+ 
  if (threads.length == 0) {
    Logger.log('新規メッセージなし');
    return
@@ -15,14 +17,12 @@ function OtherMail() {
 
      const webhook_url = getWebhookUrl();
 
-     NotifyDiscord(webhook_url,message);
+     return DiscordNotificationHelper(webhook_url,message);
    })
 
    Logger.log(payloads);
    UrlFetchApp.fetchAll(payloads);
  })
-
- makeMarkRead(threads);
 }
 
 
