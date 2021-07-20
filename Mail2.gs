@@ -1,6 +1,6 @@
 function Mail2(){
  var mailArray=getMailAdress2();
- const query=`{(from:${mailArray[0][0]} label:unread) (from:${mailArray[0][1]} label:unread)}`
+ const query=`{(from:${mailArray[0][0]} label:unread) (from:${mailArray[0][1]} label:unread) (from:${mailArray[0][2]} label:unread)}}`
  const threads = GmailApp.search(query);  // 条件に合う未読のスレッドを取得
 
  if (threads.length == 0) {
@@ -35,5 +35,5 @@ function getMailAdress2(){
   const spreadsheet=SpreadsheetApp.getActiveSpreadsheet();
   const sheet=spreadsheet.getActiveSheet();
 
-  return sheet.getRange(3,3,1,2).getValues();  // セルC3からセルD3を取得
+  return sheet.getRange(3,3,1,3).getValues();  // セルC3からセルD3を取得
 }
