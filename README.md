@@ -13,7 +13,7 @@ GitHubアカウントを持っている方は、[Google Apps Script GitHub ア�
 スクリプトを移し終わったら、一旦スプレッドシートに戻ります.<br>
 スプレッドシートのA列はコードとは関係ないので、適当に好きなインデックス名を記入してください。<br>
 B列には通知を送りたいディスコードチャンネルのwebhookのURLを追加してください。<br>
-webhookのurlの取得方法については[公式の解説](https://support.discord.com/hc/ja/articles/228383668-%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB-Webhooks%E3%81%B8%E3%81%AE%E5%BA%8F%E7%AB%A0)などを参考にしてみてください。<br>
+webhookのurlの取得方法については[公式の解説](https://support.discord.com/hc/ja/articles/228383668-%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB-Webhooks%E3%81%B8%E3%81%AE%E5%BA%8F%E7%AB%A0)や先ほど紹介した[サイト](https://note.com/lispict/n/n674157c0ebb8)などを参考にしてみてください。<br>
 C2,D2とC3,D3には、そのほかのメールとは区別して受け取りたいメールのメールアドレスをそれぞれ追加してください。<br>
 C1とD1は空欄になりますが、問題ありません。<br>
 
