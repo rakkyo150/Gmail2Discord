@@ -1,3 +1,4 @@
+// コミットコメントに書き忘れたけどフッターも付けました
 function DiscordNotificationHelperCrimson(webhook_url, message) {
   const from = message.getFrom();
   const time = message.getDate();
