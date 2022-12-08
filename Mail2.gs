@@ -35,5 +35,5 @@ function getMailAdress2(){
   const spreadsheet=SpreadsheetApp.getActiveSpreadsheet();
   const sheet=spreadsheet.getActiveSheet();
 
-  return sheet.getRange(3,3,1,3).getValues();  // セルC3からセルD3を取得
+  return sheet.getRange(3,3,1,3).getValues();  // セルC3からセルE3を取得
 }

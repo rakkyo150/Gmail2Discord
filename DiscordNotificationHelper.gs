@@ -85,3 +85,33 @@ function DiscordNotificationHelperGreen(webhook_url, message) {
     payload: JSON.stringify(payload),
   }
 }
+  
+function DiscordNotificationHelperOrangeWithMention(webhook_url, message) {
+  const from = message.getFrom();
+  const time = message.getDate();
+  // 他と違ってメンションする
+  const subject_bold = "@everyone\n" + "**" + message.getSubject() + "**";
+  const subject = message.getSubject();
+  const plainBody = message.getPlainBody();
+
+  Logger.log(subject);
+  const payload = {
+    "content": subject_bold,
+    "embeds": [{
+      "title": subject,
+      "color": 14177041,
+      "author": {
+        "name": from
+      },
+      "description": plainBody.substr(0, 2048),
+      "footer": {
+        "text": from + "\n" + time
+      }
+    }]
+  }
+  return {
+    url: webhook_url,
+    contentType: 'application/json',
+    payload: JSON.stringify(payload),
+  }
+}
