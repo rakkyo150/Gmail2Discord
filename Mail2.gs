@@ -15,7 +15,7 @@ function Mail2(){
      message.markRead();
      const webhook_url = getWebhookUrl2();
      
-     return DiscordNotificationHelperGreen(webhook_url,message);
+     return DiscordNotificationHelperGreenWithMention(webhook_url,message);
    })
 
    Logger.log(payloads);

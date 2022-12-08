@@ -57,16 +57,16 @@ function DiscordNotificationHelperGold(webhook_url, message) {
   }
 }
 
-function DiscordNotificationHelperGreen(webhook_url, message) {
+function DiscordNotificationHelperGreenWithMention(webhook_url, message) {
   const from = message.getFrom();
   const time = message.getDate();
-  const subject_bold = "**" + message.getSubject() + "**";
+  const subject_bold_with_mention = "@everyone\n" + "**" + message.getSubject() + "**";
   const subject = message.getSubject();
   const plainBody = message.getPlainBody();
 
   Logger.log(subject);
   const payload = {
-    "content": subject_bold,
+    "content": subject_bold_with_mention,
     "embeds": [{
       "title": subject,
       "color": 32768,
@@ -90,13 +90,13 @@ function DiscordNotificationHelperOrangeWithMention(webhook_url, message) {
   const from = message.getFrom();
   const time = message.getDate();
   // 他と違ってメンションする
-  const subject_bold = "@everyone\n" + "**" + message.getSubject() + "**";
+  const subject_bold_with_mention = "@everyone\n" + "**" + message.getSubject() + "**";
   const subject = message.getSubject();
   const plainBody = message.getPlainBody();
 
   Logger.log(subject);
   const payload = {
-    "content": subject_bold,
+    "content": subject_bold_with_mention,
     "embeds": [{
       "title": subject,
       "color": 14177041,
