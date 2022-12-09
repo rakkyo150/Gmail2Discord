@@ -1,5 +1,5 @@
 function ImportantMail() {
- const importantSubjectQuery=`{(subject:(【 】) label:unread) (subject:重要 label:unread) (subject:再送 label:unread) (subject:確認 label:unread) (subject:至急 label:unread) (subject:緊急 label:unread)} `
+ const importantSubjectQuery=`{(subject:重要 label:unread) (subject:再送 label:unread) (subject:確認 label:unread) (subject:至急 label:unread) (subject:緊急 label:unread)}`
  const threads = GmailApp.search(importantSubjectQuery);  // 条件に合う未読のスレッドを取得
 
  if (threads.length == 0) {
