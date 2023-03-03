@@ -11,12 +11,38 @@
 製作にあたって参考にさせていただいたサイト:https://note.com/lispict/n/n674157c0ebb8
 
 ## 使用方法
+### 方法１
+```bash
+# リポジトリをクローン
+$ git clone https://github.com/rakkyo150/Gmail2Discord
+$ cd Gmail2Discord
+
+# パッケージをインストール
+$ npm install
+
+# claspを導入
+$ npm install -g @google/clasp
+
+$ clasp login
+# 表示にしたがってログイン
+
+$ clasp create
+# "Create which script"はsheetsを選択
+
+$ clasp push
+```
+[共通](#共通)へ
+
+## 方法２
 受け取りたいGmailのGoogle アカウントにログインしたうえで、Google スプレッドシートを開いてください。<br>
 スプレッドシートを新規作成して、上のツールからスクリプトエディターを開きます。<br>
-GitHubアカウントを持っている方は、[Google Apps Script GitHub アシスタント](https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo?hl=ja)を導入してこのリポジトリをフォークしてプルするのが一番楽かも。<br>
-そうじゃない人は.gsファイルを頑張ってコピペしてください。
+GitHubアカウントを持っている方は、[Google Apps Script GitHub アシスタント](https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo?hl=ja)を導入してこのリポジトリをフォークしてプルしてoutput以下のgsファイルを取り出す方法があります。<br>
+そうじゃない人はoutput/*.gsを頑張ってコピペしてください。
 
-スクリプトを自分のスクリプトエディタに移し終わったら、一旦スプレッドシートに戻ります.<br>
+[共通](#共通)へ
+
+## 共通
+スクリプトを自分のスクリプトエディタに移し終わったら、一旦スクリプトと連携しているスプレッドシートへ移動します.<br>
 スプレッドシートのA列はコードとは関係ないので、適当に好きなインデックス名を記入してください。<br>
 B列には通知を送りたいディスコードチャンネルのwebhookのURLを追加してください。<br>
 webhookのurlの取得方法については[公式の解説](https://support.discord.com/hc/ja/articles/228383668-%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB-Webhooks%E3%81%B8%E3%81%AE%E5%BA%8F%E7%AB%A0)や先ほど紹介した[サイト](https://note.com/lispict/n/n674157c0ebb8)などを参考にしてみてください。<br>
