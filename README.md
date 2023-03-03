@@ -18,8 +18,8 @@ $ git clone https://github.com/rakkyo150/Gmail2Discord
 $ cd Gmail2Discord
 
 # パッケージをインストール
-# 開発者の方はproductionオプションは外してください
-$ npm install -production
+# productionオプションを付けるとhuskyでエラーになるので付けない
+$ npm install
 
 # claspを導入
 $ npm install -g @google/clasp
