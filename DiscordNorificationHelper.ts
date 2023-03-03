@@ -1,5 +1,5 @@
 // コミットコメントに書き忘れたけどフッターも付けました
-function DiscordNotificationHelperCrimson(webhook_url, message) {
+function DiscordNotificationHelperCrimson(webhook_url: string, message: GoogleAppsScript.Gmail.GmailMessage) {
   const from = message.getFrom();
   const time = message.getDate();
   const subject_bold = "**" + message.getSubject() + "**";
@@ -28,7 +28,7 @@ function DiscordNotificationHelperCrimson(webhook_url, message) {
   }
 }
 
-function DiscordNotificationHelperGold(webhook_url, message) {
+function DiscordNotificationHelperGold(webhook_url: string, message: GoogleAppsScript.Gmail.GmailMessage) {
   const from = message.getFrom();
   const time = message.getDate();
   const subject_bold = "**" + message.getSubject() + "**";
@@ -57,7 +57,7 @@ function DiscordNotificationHelperGold(webhook_url, message) {
   }
 }
 
-function DiscordNotificationHelperGreenWithMention(webhook_url, message) {
+function DiscordNotificationHelperGreenWithMention(webhook_url: string, message: GoogleAppsScript.Gmail.GmailMessage) {
   const from = message.getFrom();
   const time = message.getDate();
   const subject_bold_with_mention = "@everyone\n" + "**" + message.getSubject() + "**";
@@ -86,7 +86,7 @@ function DiscordNotificationHelperGreenWithMention(webhook_url, message) {
   }
 }
   
-function DiscordNotificationHelperOrangeWithMention(webhook_url, message) {
+function DiscordNotificationHelperOrangeWithMention(webhook_url: string, message: GoogleAppsScript.Gmail.GmailMessage) {
   const from = message.getFrom();
   const time = message.getDate();
   // 他と違ってメンションする

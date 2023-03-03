@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+tsc
+for filename in output/*.js;
+    do mv $filename ${filename%.js}.gs;
+done
