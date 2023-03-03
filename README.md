@@ -38,8 +38,8 @@ $ clasp push
 ### 方法２
 受け取りたいGmailのGoogle アカウントにログインしたうえで、Google スプレッドシートを開いてください。<br>
 スプレッドシートを新規作成して、拡張機能->Apps Scriptを開きます。<br>
-GitHubアカウントを持っている方は、[Google Apps Script GitHub アシスタント](https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo?hl=ja)を導入してこのリポジトリをフォークしてプルしてoutput以下のgsファイルを取り出す方法があります。<br>
-そうじゃない人はoutput/*.gsを頑張ってコピペしてください。
+GitHubアカウントを持っている方は、[Google Apps Script GitHub アシスタント](https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo?hl=ja)を導入してこのリポジトリをフォークしてプルして`output`以下のgsファイルを取り出す方法があります。<br>
+そうじゃない人は`output/*.gs`を頑張ってコピペしてください。
 
 以下[共通](#共通)へ
 
@@ -54,9 +54,9 @@ webhookのurlの取得方法については[公式の解説](https://support.dis
 **C1とD1とE1(2021/7/21に仕様変更)** や **C4とD4とE4(2022/12/8に追加)** は空欄になりますが、問題ありません。<br>
 
 再びスクリプトエディタに戻ってきます(スプレッドシートの拡張機能->Apps Script)。<br>
-Main.gsに移動して実行する関数をMainFunctionに設定して実行してみてください。<br>
+`main.gs`に移動して実行する関数を`MainFunction`に設定して実行してみてください。<br>
 [下の動作](#具体的な動作)どおり動いたらOK。<br>
-あとはトリガーから定期的にMainFunctionを呼び出す設定をしてやれば自動化できます。<br>
+あとはトリガーから定期的に`MainFunction`を呼び出す設定をしてやれば自動化できます。<br>
 
 ## 具体的な動作
 **C2,D2,E2(2021/7/21に仕様変更)** に記入したメールアドレスが送信元の未読メールをB2で記入したディスコードチャンネルのwebhookに送ります。<br>
