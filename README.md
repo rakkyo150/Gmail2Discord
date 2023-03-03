@@ -18,7 +18,8 @@ $ git clone https://github.com/rakkyo150/Gmail2Discord
 $ cd Gmail2Discord
 
 # パッケージをインストール
-$ npm install
+# 開発者の方はproductionオプションは外してください
+$ npm install -production
 
 # claspを導入
 $ npm install -g @google/clasp
@@ -34,7 +35,7 @@ $ clasp push
 ```
 以下[共通](#共通)へ
 
-## 方法２
+### 方法２
 受け取りたいGmailのGoogle アカウントにログインしたうえで、Google スプレッドシートを開いてください。<br>
 スプレッドシートを新規作成して、拡張機能->Apps Scriptを開きます。<br>
 GitHubアカウントを持っている方は、[Google Apps Script GitHub アシスタント](https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo?hl=ja)を導入してこのリポジトリをフォークしてプルしてoutput以下のgsファイルを取り出す方法があります。<br>
@@ -42,7 +43,7 @@ GitHubアカウントを持っている方は、[Google Apps Script GitHub ア�
 
 以下[共通](#共通)へ
 
-## 共通
+### 共通
 スクリプトを自分のスクリプトエディタに移し終わったら、一旦スクリプトと連携しているスプレッドシートへ移動します。<br>
 方法１でやった方は、Gmail2Discordというスプレッドシートがあるのでそれを開いてください。<br>
 スプレッドシートのA列はコードとは関係ないので、適当に好きなインデックス名を記入してください。<br>
@@ -63,3 +64,8 @@ Main.gsに移動して実行する関数をMainFunctionに設定して実行し�
 また、**重要そうな件名のものは、B4に記入したディスコードチャンネルのwebhookに送ります(2022/12/8に機能追加)。**<br>
 そのほかの未読メールはすべてB1に記入したディスコードチャンネルのwebhookに送ります。<br>
 **(2022/12/26に誤字修正)**
+
+## For Developer
+コンパイル環境がない方のために、[husky](https://www.npmjs.com/package/husky)を使って、コンパイルを忘れていた場合はコミット後にコンパイルするようにしています。<br>
+そのため、コミット後に差分確認をお願いします。<br>
+また、`tsc -w`の代わりに`npm run watch`も使えるようにしてるので、お好みで使用してください。<br>

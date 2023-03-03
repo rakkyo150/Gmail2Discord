@@ -1,10 +1,9 @@
 {
   "dependencies": {
-    "@types/google-apps-script": "^1.0.57",
-    "husky": "^8.0.3"
+    "@types/google-apps-script": "^1.0.57"
   },
   "devDependencies": {
-    "husky": "^8.0.0"
+    "husky": "^8.0.3"
   },
   "scripts": {
     "prepare": "husky install",
