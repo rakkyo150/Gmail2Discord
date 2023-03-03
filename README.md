@@ -22,6 +22,7 @@ $ npm install
 
 # claspを導入
 $ npm install -g @google/clasp
+# ローカルインストールの場合は、以下のclaspコマンドの前にnpxをつけてください
 
 $ clasp login
 # 表示にしたがってログイン
@@ -31,18 +32,19 @@ $ clasp create
 
 $ clasp push
 ```
-[共通](#共通)へ
+以下[共通](#共通)へ
 
 ## 方法２
 受け取りたいGmailのGoogle アカウントにログインしたうえで、Google スプレッドシートを開いてください。<br>
-スプレッドシートを新規作成して、上のツールからスクリプトエディターを開きます。<br>
+スプレッドシートを新規作成して、拡張機能->Apps Scriptを開きます。<br>
 GitHubアカウントを持っている方は、[Google Apps Script GitHub アシスタント](https://chrome.google.com/webstore/detail/google-apps-script-github/lfjcgcmkmjjlieihflfhjopckgpelofo?hl=ja)を導入してこのリポジトリをフォークしてプルしてoutput以下のgsファイルを取り出す方法があります。<br>
 そうじゃない人はoutput/*.gsを頑張ってコピペしてください。
 
-[共通](#共通)へ
+以下[共通](#共通)へ
 
 ## 共通
-スクリプトを自分のスクリプトエディタに移し終わったら、一旦スクリプトと連携しているスプレッドシートへ移動します.<br>
+スクリプトを自分のスクリプトエディタに移し終わったら、一旦スクリプトと連携しているスプレッドシートへ移動します。<br>
+方法１でやった方は、Gmail2Discordというスプレッドシートがあるのでそれを開いてください。<br>
 スプレッドシートのA列はコードとは関係ないので、適当に好きなインデックス名を記入してください。<br>
 B列には通知を送りたいディスコードチャンネルのwebhookのURLを追加してください。<br>
 webhookのurlの取得方法については[公式の解説](https://support.discord.com/hc/ja/articles/228383668-%E3%82%BF%E3%82%A4%E3%83%88%E3%83%AB-Webhooks%E3%81%B8%E3%81%AE%E5%BA%8F%E7%AB%A0)や先ほど紹介した[サイト](https://note.com/lispict/n/n674157c0ebb8)などを参考にしてみてください。<br>
@@ -50,9 +52,9 @@ webhookのurlの取得方法については[公式の解説](https://support.dis
 また、**重要そうな件名のメールを受け取りたいディスコードチャンネルのwebhookをB4に追加してください(2022/12/8に機能追加)。**<br>
 **C1とD1とE1(2021/7/21に仕様変更)** や **C4とD4とE4(2022/12/8に追加)** は空欄になりますが、問題ありません。<br>
 
-再びスクリプトエディタに戻ってきます。<br>
+再びスクリプトエディタに戻ってきます(スプレッドシートの拡張機能->Apps Script)。<br>
 Main.gsに移動して実行する関数をMainFunctionに設定して実行してみてください。<br>
-下の動作どおり動いたらOK。<br>
+[下の動作](#具体的な動作)どおり動いたらOK。<br>
 あとはトリガーから定期的にMainFunctionを呼び出す設定をしてやれば自動化できます。<br>
 
 ## 具体的な動作
