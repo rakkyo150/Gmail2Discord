@@ -17,7 +17,7 @@ function OtherMail() {
 
       const webhook_url = getWebhookUrl();
 
-      return DiscordNotificationHelperCrimson(webhook_url, message);
+      return DiscordNotificationHelper(webhook_url, message, ColorCode.CRIMSON, false);
     });
 
     Logger.log(payloads);

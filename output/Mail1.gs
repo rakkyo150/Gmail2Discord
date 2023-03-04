@@ -12,7 +12,7 @@ function Mail1() {
         const payloads = messages.map(function (message) {
             message.markRead();
             const webhook_url = getWebhookUrl1();
-            return DiscordNotificationHelperGold(webhook_url, message);
+            return DiscordNotificationHelper(webhook_url, message, ColorCode.GOLD, false);
         });
         Logger.log(payloads);
         UrlFetchApp.fetchAll(payloads);

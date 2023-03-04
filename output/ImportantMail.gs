@@ -11,7 +11,7 @@ function ImportantMail() {
         const payloads = messages.map(function (message) {
             message.markRead();
             const webhook_url = getWebhookUrl3();
-            return DiscordNotificationHelperOrangeWithMention(webhook_url, message);
+            return DiscordNotificationHelper(webhook_url, message, ColorCode.ORANGE, true);
         });
         Logger.log(payloads);
         UrlFetchApp.fetchAll(payloads);
