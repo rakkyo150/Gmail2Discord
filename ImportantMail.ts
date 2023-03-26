@@ -1,4 +1,4 @@
-function ImportantMail() {
+function SendImportantMail() {
   const importantSubjectQuery = `{(subject:重要 label:unread) (subject:再送 label:unread) (subject:確認 label:unread) (subject:至急 label:unread) (subject:緊急 label:unread)}`;
   const threads = GmailApp.search(importantSubjectQuery); // 条件に合う未読のスレッドを取得
 
@@ -11,10 +11,9 @@ function ImportantMail() {
     const messages = thread.getMessages();
 
     const payloads = messages.map(function (message) {
-      message.markRead();
       const webhook_url = getWebhookUrl3();
 
-      return DiscordNotificationHelper(webhook_url, message, ColorCode.ORANGE, true);
+      return MakeAllInfoPayload(webhook_url, message, ColorCode.ORANGE, true);
     });
 
     Logger.log(payloads);

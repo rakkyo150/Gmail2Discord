@@ -1,5 +1,5 @@
 "use strict";
-function Mail1() {
+function SendMail1() {
     let mailArray = getMailAdress1();
     const query = `{(from:${mailArray[0][0]} label:unread) (from:${mailArray[0][1]} label:unread) (from:${mailArray[0][2]} label:unread) (from:${mailArray[0][3]} label:unread)}`;
     const threads = GmailApp.search(query); // 条件に合う未読のスレッドを取得
@@ -12,7 +12,7 @@ function Mail1() {
         const payloads = messages.map(function (message) {
             message.markRead();
             const webhook_url = getWebhookUrl1();
-            return DiscordNotificationHelper(webhook_url, message, ColorCode.GOLD, false);
+            return MakeAllInfoPayload(webhook_url, message, ColorCode.GOLD, false);
         });
         Logger.log(payloads);
         UrlFetchApp.fetchAll(payloads);

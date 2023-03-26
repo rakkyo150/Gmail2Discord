@@ -1,4 +1,4 @@
-function Mail2() {
+function SendMail2() {
   let mailArray = getMailAdress2();
   const query = `{(from:${mailArray[0][0]} label:unread) (from:${mailArray[0][1]} label:unread) (from:${mailArray[0][2]} label:unread)}`;
   const threads = GmailApp.search(query); // 条件に合う未読のスレッドを取得
@@ -15,7 +15,7 @@ function Mail2() {
       message.markRead();
       const webhook_url = getWebhookUrl2();
 
-      return DiscordNotificationHelper(webhook_url, message, ColorCode.GREEN, true);
+      return MakeAllInfoPayload(webhook_url, message, ColorCode.GREEN, true);
     });
 
     Logger.log(payloads);

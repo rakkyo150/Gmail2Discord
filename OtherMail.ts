@@ -1,4 +1,4 @@
-function OtherMail() {
+function SendOtherMail() {
   const query = "label:unread";
   const threads = GmailApp.search(query); // 未読のスレッドすべてを取得
 
@@ -17,7 +17,7 @@ function OtherMail() {
 
       const webhook_url = getWebhookUrl();
 
-      return DiscordNotificationHelper(webhook_url, message, ColorCode.CRIMSON, false);
+      return MakeAllInfoPayload(webhook_url, message, ColorCode.CRIMSON, false);
     });
 
     Logger.log(payloads);
