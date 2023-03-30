@@ -7,6 +7,7 @@ function SendMail1() {
         Logger.log("新規メッセージなし");
         return;
     }
+    threads.reverse();
     threads.forEach(function (thread) {
         const messages = thread.getMessages();
         messages.forEach((message) => {

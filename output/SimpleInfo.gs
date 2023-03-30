@@ -11,8 +11,9 @@ function SendSimpleInfo() {
     if (notImportantThreads.length == 0) {
         Logger.log("normalThreads: 新規メッセージなし");
     }
+    importantThreads.reverse();
     importantThreads.forEach(function (thread) {
-        const messages = thread.getMessages();
+        let messages = thread.getMessages();
         messages.forEach((message) => {
             const webhook_url = getWebhookUrl4();
             const option = MakeSimpleInfoOption(message, ColorCode.BLUE, true);
@@ -20,6 +21,7 @@ function SendSimpleInfo() {
             Utilities.sleep(1000);
         });
     });
+    notImportantThreads.reverse();
     notImportantThreads.forEach(function (thread) {
         const messages = thread.getMessages();
         console.log(messages.length);

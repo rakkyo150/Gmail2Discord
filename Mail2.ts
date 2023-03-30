@@ -8,6 +8,7 @@ function SendMail2() {
     return;
   }
 
+  threads.reverse();
   threads.forEach(function (thread) {
     const messages = thread.getMessages();
 
