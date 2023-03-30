@@ -1,13 +1,14 @@
 "use strict";
 function SendSimpleInfo() {
-    const importantSubjectQuery = `{(subject:重要 label:unread) (subject:再送 label:unread) (subject:確認 label:unread) (subject:至急 label:unread) (subject:緊急 label:unread)}`;
+    const importantWords = "{subject:重要 再送 確認 至急 緊急}";
+    const importantSubjectQuery = `(${importantWords} label:unread)`;
     const importantThreads = GmailApp.search(importantSubjectQuery); // 条件に合う未読のスレッドを取得
-    const normalSubjectQuery = "label:unread";
-    const normalThreads = GmailApp.search(normalSubjectQuery);
+    const notImportantSubjectQuery = `(-${importantWords} label:unread)`;
+    const notImportantThreads = GmailApp.search(notImportantSubjectQuery);
     if (importantThreads.length == 0) {
         Logger.log("importantThreads: 新規メッセージなし");
     }
-    if (normalThreads.length == 0) {
+    if (notImportantThreads.length == 0) {
         Logger.log("normalThreads: 新規メッセージなし");
     }
     importantThreads.forEach(function (thread) {
@@ -19,7 +20,7 @@ function SendSimpleInfo() {
             Utilities.sleep(1000);
         });
     });
-    normalThreads.forEach(function (thread) {
+    notImportantThreads.forEach(function (thread) {
         const messages = thread.getMessages();
         console.log(messages.length);
         messages.forEach((message) => {
