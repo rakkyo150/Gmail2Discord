@@ -1,6 +1,6 @@
 "use strict";
 function SendSimpleInfo() {
-    const importantWords = "{subject:重要 再送 確認 至急 緊急}";
+    const importantWords = "subject:{重要 再送 確認 至急 緊急}";
     const importantSubjectQuery = `(${importantWords} label:unread)`;
     const importantThreads = GmailApp.search(importantSubjectQuery); // 条件に合う未読のスレッドを取得
     const notImportantSubjectQuery = `(-${importantWords} label:unread)`;
