@@ -1,7 +1,7 @@
 "use strict";
 function SendMail2() {
     let mailArray = getMailAdress2();
-    const query = `{(from:${mailArray[0][0]} label:unread) (from:${mailArray[0][1]} label:unread) (from:${mailArray[0][2]} label:unread)}`;
+    const query = `{(from:${mailArray[0][0]} label:unread) (from:${mailArray[0][1]} label:unread) (from:${mailArray[0][2]} label:unread) (from:${mailArray[0][3]} label:unread)}`;
     const threads = GmailApp.search(query); // 条件に合う未読のスレッドを取得
     if (threads.length == 0) {
         Logger.log("新規メッセージなし");
