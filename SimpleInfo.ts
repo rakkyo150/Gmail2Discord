@@ -16,27 +16,27 @@ function SendSimpleInfo() {
   importantThreads.forEach(function (thread) {
     const messages = thread.getMessages();
 
-    const payloads = messages.map(function (message) {
+    messages.forEach((message) => {
       const webhook_url = getWebhookUrl4();
 
-      return MakeSimpleInfoPayload(webhook_url, message, ColorCode.BLUE, true);
+      const option = MakeSimpleInfoOption(message, ColorCode.BLUE, true);
+      UrlFetchApp.fetch(webhook_url, option);
+      Utilities.sleep(1000);
     });
-
-    UrlFetchApp.fetchAll(payloads);
   });
 
   normalThreads.forEach(function (thread) {
     const messages = thread.getMessages();
     console.log(messages.length);
 
-    const payloads = messages.map(function (message) {
+    messages.forEach((message) => {
       const webhook_url = getWebhookUrl4();
       console.log(webhook_url);
 
-      return MakeSimpleInfoPayload(webhook_url, message, ColorCode.BLUE, false);
+      const option = MakeSimpleInfoOption(message, ColorCode.BLUE, false);
+      UrlFetchApp.fetch(webhook_url, option);
+      Utilities.sleep(1000);
     });
-
-    UrlFetchApp.fetchAll(payloads);
   });
 }
 

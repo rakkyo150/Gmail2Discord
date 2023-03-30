@@ -11,15 +11,14 @@ function SendMail1() {
   threads.forEach(function (thread) {
     const messages = thread.getMessages();
 
-    const payloads = messages.map(function (message) {
+    messages.forEach((message) => {
       message.markRead();
       const webhook_url = getWebhookUrl1();
 
-      return MakeAllInfoPayload(webhook_url, message, ColorCode.GOLD, false);
+      const option = MakeAllInfoPayload(message, ColorCode.GREEN, false);
+      UrlFetchApp.fetch(webhook_url, option);
+      Utilities.sleep(1000);
     });
-
-    Logger.log(payloads);
-    UrlFetchApp.fetchAll(payloads);
   });
 }
 

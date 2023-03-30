@@ -10,14 +10,13 @@ function SendImportantMail() {
   threads.forEach(function (thread) {
     const messages = thread.getMessages();
 
-    const payloads = messages.map(function (message) {
+    messages.forEach((message) => {
       const webhook_url = getWebhookUrl3();
 
-      return MakeAllInfoPayload(webhook_url, message, ColorCode.ORANGE, true);
+      const option = MakeAllInfoPayload(message, ColorCode.GREEN, true);
+      UrlFetchApp.fetch(webhook_url, option);
+      Utilities.sleep(1000);
     });
-
-    Logger.log(payloads);
-    UrlFetchApp.fetchAll(payloads);
   });
 }
 

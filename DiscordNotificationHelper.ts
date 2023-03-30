@@ -7,7 +7,6 @@ enum ColorCode {
 }
 
 function MakeAllInfoPayload(
-  webhook_url: string,
   message: GoogleAppsScript.Gmail.GmailMessage,
   color_code: ColorCode,
   mention_flag: boolean
@@ -40,14 +39,12 @@ function MakeAllInfoPayload(
   };
 
   return {
-    url: webhook_url,
     contentType: "application/json",
     payload: JSON.stringify(payload),
   };
 }
 
-function MakeSimpleInfoPayload(
-  webhook_url: string,
+function MakeSimpleInfoOption(
   message: GoogleAppsScript.Gmail.GmailMessage,
   color_code: ColorCode,
   mention_flag: boolean
@@ -75,7 +72,6 @@ function MakeSimpleInfoPayload(
   };
 
   return {
-    url: webhook_url,
     contentType: "application/json",
     payload: JSON.stringify(payload),
   };

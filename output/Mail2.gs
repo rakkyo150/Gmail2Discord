@@ -9,13 +9,13 @@ function SendMail2() {
     }
     threads.forEach(function (thread) {
         const messages = thread.getMessages();
-        const payloads = messages.map(function (message) {
+        messages.forEach((message) => {
             message.markRead();
             const webhook_url = getWebhookUrl2();
-            return MakeAllInfoPayload(webhook_url, message, ColorCode.GREEN, true);
+            const option = MakeAllInfoPayload(message, ColorCode.GREEN, true);
+            UrlFetchApp.fetch(webhook_url, option);
+            Utilities.sleep(1000);
         });
-        Logger.log(payloads);
-        UrlFetchApp.fetchAll(payloads);
     });
 }
 function getWebhookUrl2() {

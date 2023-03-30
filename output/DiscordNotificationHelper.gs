@@ -7,7 +7,7 @@ var ColorCode;
     ColorCode["ORANGE"] = "14177041";
     ColorCode["BLUE"] = "5610452";
 })(ColorCode || (ColorCode = {}));
-function MakeAllInfoPayload(webhook_url, message, color_code, mention_flag) {
+function MakeAllInfoPayload(message, color_code, mention_flag) {
     const from = message.getFrom();
     const time = message.getDate();
     const subject = message.getSubject();
@@ -32,12 +32,11 @@ function MakeAllInfoPayload(webhook_url, message, color_code, mention_flag) {
         ],
     };
     return {
-        url: webhook_url,
         contentType: "application/json",
         payload: JSON.stringify(payload),
     };
 }
-function MakeSimpleInfoPayload(webhook_url, message, color_code, mention_flag) {
+function MakeSimpleInfoOption(message, color_code, mention_flag) {
     const from = message.getFrom();
     const time = message.getDate();
     const subject = message.getSubject();
@@ -57,7 +56,6 @@ function MakeSimpleInfoPayload(webhook_url, message, color_code, mention_flag) {
         ],
     };
     return {
-        url: webhook_url,
         contentType: "application/json",
         payload: JSON.stringify(payload),
     };
