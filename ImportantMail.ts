@@ -13,7 +13,7 @@ function SendImportantMail() {
     messages.forEach((message) => {
       const webhook_url = getWebhookUrl3();
 
-      const option = MakeAllInfoPayload(message, ColorCode.GREEN, true);
+      const option = MakeAllInfoPayload(message, ColorCode.ORANGE, true);
       UrlFetchApp.fetch(webhook_url, option);
       Utilities.sleep(1000);
     });
