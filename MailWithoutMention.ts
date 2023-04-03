@@ -16,7 +16,7 @@ function SendMailWithoutMention() {
       message.markRead();
       const webhook_url = getWebhookUrl1();
 
-      const option = MakeAllInfoPayload(message, ColorCode.GREEN, false);
+      const option = MakeAllInfoPayload(message, ColorCode.GOLD, false);
       UrlFetchApp.fetch(webhook_url, option);
       Utilities.sleep(1000);
     });
